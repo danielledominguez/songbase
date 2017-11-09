@@ -1,0 +1,19 @@
+{% extends "home-base.html" %}
+{% block head %}
+<style>
+  h1 {
+    color:blue;
+  }
+</style>
+{% endblock %}
+
+
+{% block page_content%}
+    <h1>this is Danielle's song list:</h1>
+    <ul>
+    {% for song in songs %}
+        <li>{{song}}</li>
+    {% endfor %}
+    <img src="{{ url_for('static', filename = 'img/caterpillar.png')}}" alt="caterpillar">
+    </ul>
+{% endblock %}

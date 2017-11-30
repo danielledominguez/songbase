@@ -12,9 +12,23 @@ Add Songs
 <input type="text" name="name" value=""><br><br>
 <label>Song year</label>
 <input type="text" name="year" value=""><br><br>
+<select name="year">
+  {% for i in range(1950, 2025) %}
+  {% if i == 2017 %}
+    <option selected="selected">{{i}}</option>
+    {% else %}
+    <option>{{i}}</option>
+    {% endif %}
+  {% endfor %}
+</select>
 <label>Lyrics</label>
 <input type="text" name="lyrics" value=""><br><br>
 <label>Artist Name</label>
+<select name="artist">
+  {% for artist in artists %}
+  <option>{{artist.name}}</option>
+  {% endfor %}
+</select>
 <input type="text" name="artist_name" value=""><br><br>
 <input type="submit" name="" value="Add Song">
 </form>
